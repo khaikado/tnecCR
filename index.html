@@ -36,10 +36,10 @@
         <div class="box">
             <form action="/submit-rent" method="post">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="user_name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>
+                <input type="text" id="name" name="name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>
                 
                 <label for="room-selection">Department</label>
-                <select class="square" id="room-selection" name="room_preference" required>
+                <select class="square" id="room-selection" name="Department" required>
                     <option value="">Choose a Department</option>
                     <option value="admin">Admin</option>
                     <option value="hr">HR</option>
@@ -51,16 +51,16 @@
                 <input class="circle" type="radio" name="car" id="wb4052v">WB 4052 V
 
                 <label for="checkout-date">Check-out Date</label>
-                <input type="date" id="checkout-date" name="checkout" required>
+                <input type="date" id="checkout-date" name="checkoutDate" required>
 
                 <label for="timeout">Time</label>
                 <input type="text" id="timeout" name="time_out" placeholder="14:30" pattern="\d{2}:\d{2}" required>
 
-                <label for="odormeter">Odometer</label>
-                <input type="text" id="odormeter" name="carmeter" placeholder="100000" required>
+                <label for="odormeter">Odormeter</label>
+                <input type="text" id="odormeter" name="odormeterOut" placeholder="100000" required>
 
                 <label for="loc">Location</label>
-                <input type="text" id="loc" name="loc" placeholder="POS" pattern="[A-Z\sa-z]{3,20}" required>
+                <input type="text" id="loc" name="Location" placeholder="POS" pattern="[A-Z\sa-z]{3,20}" required>
 
                 <label for="urusan">Business</label>
                 <input type="text" id="urusan" name="urusan" pattern="[A-Z\sa-z]{3,50}" required>
