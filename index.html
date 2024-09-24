@@ -8,6 +8,23 @@
 </head>
 <body>
 
+    <script>
+        function getRentId() {
+                        /* URL of the Google Apps Script Web App you deployed*/
+                        const scriptURL = 'https://script.google.com/macros/s/YOUR_DEPLOYED_WEB_APP_URL/exec';
+
+                         // Fetch the row count from the Google Apps Script Web App
+                        fetch(scriptURL)
+                            .then(response => response.json())
+                            .then(data => {
+                                // Display the row count in the HTML
+                                document.getElementById('rowCount').textContent = data.rowCount;
+                            })
+                            .catch(error => console.error('Error fetching row count:', error));
+                                document.getElementById(0).stepUp(1);
+                            }
+    </script>
+
     <!-- Floating Header Section -->
     <div id="header-wrapper">
         <div id="header" class="container">
@@ -34,7 +51,10 @@
         <!-- Rent Form Section -->
         <h2 id="checkoutsection">Rent Form</h2><br>
         <div class="box">
-            <form action="https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec" method="post">
+            <form action="https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec" method="post" onsubmit="getRentId()">
+                 <!-- Hidden field for rentId -->
+                <input type="hidden" id="rentId" name="rentId" value="0">
+                
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>
                 
