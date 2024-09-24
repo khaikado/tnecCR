@@ -158,3 +158,37 @@ button {
 button:hover {
 	background-color: #45a049;
 }
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+footer{
+	background-color: #003366;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem;
+	font-family: arial;
+	font-size: small;
+}
+
+footer a{
+text-decoration: none;
+color: white;
+}
+
+.footer-right{
+display: flex;
+align-items: center;
+}
+
+.footer-left{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+footer span{
+gap: 5px;
+}
