@@ -41,6 +41,16 @@
         </div>
     </div>
 
+    <!-- Alert -->
+    <script>
+        function alert() {
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <strong>Reminder!</strong> Your rent ID is ___, Please take note.
+            </div>
+        }
+    </script>
+
     <!-- Content Above the Form -->
     <div class="fullscreen">
         <div class="content">
@@ -85,7 +95,7 @@
                 <label for="urusan">Business</label>
                 <input type="text" id="urusan" name="urusan" pattern="[A-Z\sa-z]{3,50}" required>
 
-                <button type="submit">Submit</button>
+                <button onclick="alert()" type="submit">Submit</button>
             </form>
         </div>
     </div>
