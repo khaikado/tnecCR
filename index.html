@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNEC Web</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+    <!-- Floating Header Section -->
+    <div id="header-wrapper">
+        <div id="header" class="container">
+          <div id="logo">
+              <img src="tnec.png" width="170px" alt="Logo">
+          </div>
+          <div id="menu">
+            <ul>
+              <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+              <li><a href="#checkoutsection" accesskey="2" title="">Check out</a></li>
+              <li><a href="checkin.html" accesskey="3" title="">Check in</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <!-- Content Above the Form -->
+    <div class="fullscreen">
+        <div class="content">
+            <h2>Welcome to Our Rental Service</h2>
+            <p>Please fill out the form below to rent a vehicle. Ensure all fields are completed accurately.</p>
+        </div>
+
+        <!-- Rent Form Section -->
+        <h2 id="checkoutsection">Rent Form</h2>
+        <div class="box">
+            <form action="/submit-rent" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="user_name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>
+                
+                <label for="room-selection">Department</label>
+                <select id="room-selection" name="room_preference" required>
+                    <option value="">Choose a Department</option>
+                    <option value="admin">Admin</option>
+                    <option value="hr">HR</option>
+                    <option value="it">IT</option>
+                </select>
+                
+                <label for="checkout-date">Check-out Date</label>
+                <input type="date" id="checkout-date" name="checkout" required>
+
+                <label for="timeout">Time</label>
+                <input type="text" id="timeout" name="time_out" placeholder="14:30" pattern="\d{2}:\d{2}" required>
+
+                <label for="odormeter">Odometer</label>
+                <input type="text" id="odormeter" name="carmeter" placeholder="100000" required>
+
+                <label for="loc">Location</label>
+                <input type="text" id="loc" name="loc" placeholder="POS" pattern="[A-Z\sa-z]{3,20}" required>
+
+                <label for="urusan">Business</label>
+                <input type="text" id="urusan" name="urusan" pattern="[A-Z\sa-z]{3,50}" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

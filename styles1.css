@@ -1,0 +1,160 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: #EEEEEE;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 11pt;
+	font-weight: 300;
+	color: #6c6c6c;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+	color: #454445;
+}
+
+p, ol, ul {
+	margin-top: 0;
+}
+
+ol, ul {
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	line-height: 180%;
+}
+
+.fullscreen {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start; /* Align items at the start */
+}
+
+.content {
+	margin-bottom: 20px; /* Space between content and form */
+	text-align: center; /* Center the content */
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+#header-wrapper {
+	padding: 1em 0em;
+	background: #FFF;
+	position: sticky; /* Make the header sticky */
+	top: 0; /* It will stick to the top */
+	width: 100%;
+	z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.container {
+	margin: 0 auto;
+	width: 1200px;
+}
+
+#header {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/**   LOGO   **/
+#logo {
+	position: relative; /* Changed from absolute to relative */
+	margin-left: 1em; /* Add some left margin */
+}
+
+/**   MENU   **/
+#menu {
+	position: relative; /* Changed from absolute to relative */
+}
+
+#menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#menu li {
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 60px;
+}
+
+#menu li a {
+	display: inline-block;
+	margin-left: 1px;
+	padding: 0em 1.5em;
+	letter-spacing: 0.10em;
+	text-decoration: none;
+	font-size: 1em;
+	text-transform: uppercase;
+	outline: 0;
+	color: #212121;
+}
+
+#menu li:hover a {
+	background: #0071e3;
+	color: #FFF !important;
+}
+
+#menu li.current_page_item a {
+	background: #0071e3;
+	color: #FFF !important;
+}
+
+/*********************************************************************************/
+/* Form                                                                          */
+/*********************************************************************************/
+.box {
+	width: 600px; 
+	background-color: #FFF;
+	margin: 0 auto; /* Center the box */
+	border-radius: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch; /* Align items to stretch */
+	justify-content: center;
+	color: #002960;
+	font-weight: bold;
+	padding: 20px; /* Add padding inside the box */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+
+input, select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #45a049;
+}
