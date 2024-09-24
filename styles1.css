@@ -105,12 +105,12 @@ p {
 }
 
 #menu li:hover a {
-	background: #0071e3;
+	background: #d90b0b;
 	color: #FFF !important;
 }
 
 #menu li.current_page_item a {
-	background: #0071e3;
+	background: #d90b0b;
 	color: #FFF !important;
 }
 
@@ -127,7 +127,6 @@ p {
 	align-items: stretch; /* Align items to stretch */
 	justify-content: center;
 	color: #002960;
-	font-weight: bold;
 	padding: 20px; /* Add padding inside the box */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
@@ -139,11 +138,19 @@ label {
 }
 
 input, select {
-	width: 100%;
+	width: 95%;
 	padding: 10px;
 	margin-bottom: 15px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
+}
+
+.square {
+	width: 98%;
+}
+
+.circle {
+	width: 5%;
 }
 
 button {
@@ -163,32 +170,19 @@ button:hover {
 /* Footer                                                                        */
 /*********************************************************************************/
 
-footer{
+footer {
 	background-color: #003366;
 	color: white;
 	display: flex;
-	justify-content: space-between;
-	padding: 2rem;
-	font-family: arial;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	font-family: Arial, sans-serif;
 	font-size: small;
+	text-align: center;
 }
 
-footer a{
-text-decoration: none;
-color: white;
-}
-
-.footer-right{
-display: flex;
-align-items: center;
-}
-
-.footer-left{
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-footer span{
-gap: 5px;
+footer p {
+	margin: 0;
+	padding: 0 0.5rem;
 }

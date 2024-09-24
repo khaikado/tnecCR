@@ -32,20 +32,24 @@
         </div>
 
         <!-- Rent Form Section -->
-        <h2 id="checkoutsection">Rent Form</h2>
+        <h2 id="checkoutsection">Rent Form</h2><br>
         <div class="box">
             <form action="/submit-rent" method="post">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="user_name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>
                 
                 <label for="room-selection">Department</label>
-                <select id="room-selection" name="room_preference" required>
+                <select class="square" id="room-selection" name="room_preference" required>
                     <option value="">Choose a Department</option>
                     <option value="admin">Admin</option>
                     <option value="hr">HR</option>
                     <option value="it">IT</option>
                 </select>
                 
+                <label for="cars">Select Car</label>
+                <input class="circle" type="radio" name="car" id="wra138">WRA 138
+                <input class="circle" type="radio" name="car" id="wb4052v">WB 4052 V
+
                 <label for="checkout-date">Check-out Date</label>
                 <input type="date" id="checkout-date" name="checkout" required>
 
@@ -68,27 +72,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-left">
-            <p>
-            <br> © 2024 Tenaga Nasional Engineering Corporation <br> Malaysia</p>
-        </div>
-        <div class="footer-right">
-            <span>
-                <a href="https://www.linkedin.com/company/tnbengineeringcorporation/" target="_blank">
-                    <i class="fab fa-linkedin" style="font-size:24px">&nbsp;</i>					
-                </a>
-            </span>
-            <span>
-                <a href="https://www.facebook.com/tnec.com.my" target="_blank">
-                    <i class="fab fa-facebook-f" style="font-size:24px">&nbsp;</i>					
-                </a>
-            </span>
-            <span>
-                <a href="https://www.instagram.com/tnb_engineeringcorporation/" target="_blank">
-                    <i class="fab fa-instagram" style="font-size:24px"></i>					
-                </a>
-            </span>
-        </div>
+        <p>© 2024 Tenaga Nasional Engineering Corporation  |  Malaysia</p>
     </footer>
 </body>
 </html>
