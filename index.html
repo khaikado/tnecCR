@@ -9,22 +9,32 @@
 <body>
 
     <script>
+        // Function to get and auto-increment rentID
         function getRentId() {
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec';
+            // Retrieve the current list of rents from localStorage or initialize as empty array
+            let rents = JSON.parse(localStorage.getItem('rents')) || [];
             
-            fetch(scriptURL)
-                .then(response => response.json())
-                .then(data => {
-                    // Assign the rentID to the hidden field
-                    document.getElementById('rentId').value = data.rentID;
-                })
-                .catch(error => console.error('Error fetching rentID:', error));
+            // Auto-increment RentID based on the last RentID used
+            let newRentId = rents.length > 0 ? rents[rents.length - 1].rentId + 1 : 5000;
+            
+            // Debugging: Log the new RentID to the console
+            console.log('New RentID:', newRentId);
+            
+            // Set the new RentID in the hidden input field
+            document.getElementById('rentId').value = newRentId;
+            
+            // Create a new rent object (for demonstration purposes, we're just storing rentId here)
+            const newRent = { rentId: newRentId };
+            
+            // Add the new rent to the rents array
+            rents.push(newRent);
+            
+            // Save the updated rents array back to localStorage
+            localStorage.setItem('rents', JSON.stringify(rents));
+            
+            // Optionally display a message to the user
+            alert(`Your Rent ID is ${newRentId}, please take note!`);
         }
-    
-        // Call the function when the page loads
-        window.onload = function() {
-            getRentId();
-        };
     </script>
     
 
