@@ -53,14 +53,14 @@
             </div>
         </div>
     </div>
-
     <!-- Alert Script -->
-    <script>
+    <!--<script>
         function showAlert() {
             const rentId = document.getElementById('rentId').value;
             alert("Reminder! Your rent ID is " + getRentId() + ". Please take note.");
         }
     </script>
+    -->
 
     <!-- Content Above the Form -->
     <div class="fullscreen">
@@ -106,7 +106,7 @@
                 <label for="urusan">Business</label>
                 <input type="text" id="urusan" name="urusan" pattern="[A-Z\sa-z]{3,50}" required>
 
-                <button type="submit" onclick="showAlert()">Submit</button>
+                <button type="submit" onclick="getRentId()">Submit</button>
             </form>
         </div>
     </div>
