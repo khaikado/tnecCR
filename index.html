@@ -10,44 +10,45 @@
 
     <script>
         function getRentId() {
-                        /* URL of the Google Apps Script Web App you deployed*/
-                        const scriptURL = 'https://script.google.com/macros/s/YOUR_DEPLOYED_WEB_APP_URL/exec';
-
-                         // Fetch the row count from the Google Apps Script Web App
-                        fetch(scriptURL)
-                            .then(response => response.json())
-                            .then(data => {
-                                // Display the row count in the HTML
-                                document.getElementById('rowCount').textContent = data.rowCount;
-                            })
-                            .catch(error => console.error('Error fetching row count:', error));
-                                document.getElementById(0).stepUp(1);
-                            }
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec';
+            
+            fetch(scriptURL)
+                .then(response => response.json())
+                .then(data => {
+                    // Assign the rentID to the hidden field
+                    document.getElementById('rentId').value = data.rentID;
+                })
+                .catch(error => console.error('Error fetching rentID:', error));
+        }
+    
+        // Call the function when the page loads
+        window.onload = function() {
+            getRentId();
+        };
     </script>
+    
 
     <!-- Floating Header Section -->
     <div id="header-wrapper">
         <div id="header" class="container">
-          <div id="logo">
-              <img src="tnec.png" width="170px" alt="Logo">
-          </div>
-          <div id="menu">
-            <ul>
-              <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-              <li><a href="#checkoutsection" accesskey="2" title="">Check out</a></li>
-              <li><a href="checkin.html" accesskey="3" title="">Check in</a></li>
-            </ul>
-          </div>
+            <div id="logo">
+                <img src="tnec.png" width="170px" alt="Logo">
+            </div>
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+                    <li><a href="#checkoutsection" accesskey="2" title="">Check out</a></li>
+                    <li><a href="checkin.html" accesskey="3" title="">Check in</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <!-- Alert -->
+    <!-- Alert Script -->
     <script>
-        function alert() {
-            <div class="alert">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                <strong>Reminder!</strong> Your rent ID is ___, Please take note.
-            </div>
+        function showAlert() {
+            const rentId = document.getElementById('rentId').value;
+            alert("Reminder! Your rent ID is " + getRentId() + ". Please take note.");
         }
     </script>
 
@@ -61,10 +62,10 @@
         <!-- Rent Form Section -->
         <h2 id="checkoutsection">Rent Form</h2><br>
         <div class="box">
-            <form action="https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec" method="post" onsubmit="getRentId()">
-                 <!-- Hidden field for rentId -->
-                <input type="hidden" id="rentId" name="rentId" value="0">
-                
+            <form action="https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec" method="post">
+                <!-- Hidden field for rentId -->
+                <input type="hidden" id="rentId" name="rentId" value="" />
+
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>
                 
@@ -77,8 +78,8 @@
                 </select>
                 
                 <label for="cars">Select Car</label>
-                <input class="circle" type="radio" name="car" id="wra138">WRA 138
-                <input class="circle" type="radio" name="car" id="wb4052v">WB 4052 V
+                <input class="circle" type="radio" name="car" id="wra138" value="WRA 138" required> WRA 138
+                <input class="circle" type="radio" name="car" id="wb4052v" value="WB 4052 V" required> WB 4052 V
 
                 <label for="checkout-date">Check-out Date</label>
                 <input type="date" id="checkout-date" name="checkoutDate" required>
@@ -95,7 +96,7 @@
                 <label for="urusan">Business</label>
                 <input type="text" id="urusan" name="urusan" pattern="[A-Z\sa-z]{3,50}" required>
 
-                <button onclick="alert()" type="submit">Submit</button>
+                <button type="submit" onclick="showAlert()">Submit</button>
             </form>
         </div>
     </div>
