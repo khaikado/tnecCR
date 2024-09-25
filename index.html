@@ -35,6 +35,15 @@
             // Optionally display a message to the user
             alert(`Your Rent ID is ${newRentId}, please take note!`);
         }
+
+        // Function to reset rentId by clearing localStorage
+        function resetRentId() {
+            // Clear 'rents' from localStorage
+            localStorage.removeItem('rents');
+            
+            // Optionally display a message to the user
+            alert('Rent ID has been reset to 5000.');
+        }
     </script>
     
 
@@ -101,6 +110,11 @@
                 <button type="submit" onclick="getRentId()">Submit</button>
             </form>
         </div>
+    </div>
+
+    <!-- Reset Button Section -->
+    <div>
+        <button onclick="resetRentId()">Reset Rent ID</button>
     </div>
 
     <!-- Footer -->
