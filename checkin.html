@@ -32,19 +32,12 @@
       <form action="https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec" method="post">
         <label for="rentid">Rent ID</label>
         <input type="text" id="rentid" name="rentId" placeholder="5000" pattern=(\d{4}) required><br>
-        <input type="hidden" id="rentId" name="rentIdHidden" value="">
-
-        <script>
-          document.getElementById("rentid").addEventListener("input", function() {
-            document.getElementById("rentIdHidden").value = this.value;
-          });
-        </script>
         <label for="checkin-date">Check-in Date</label>
         <input type="date" id="checkin-date" name="checkinDate" required>
         <label for="name">Time</label>
-        <input type="text" id="timein" name="time_in" placeholder="14:30" pattern=(\d{2}):(\d{2}) required><br>
+        <input type="time" id="timein" name="time_in" required><br>
         <label for="name">Odormeter</label>
-        <input type="text" id="odormeter" name="odormeterIn" placeholder="100000" required><br>
+        <input type="number" id="odormeter" name="odormeterIn" placeholder="100000" required><br>
 
         <button type="submit">Submit</button>
       </form>
