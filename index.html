@@ -10,6 +10,7 @@
 
     <script>
         // Function to get and auto-increment rentID
+        /*
         function getRentId() {
             // Retrieve the current list of rents from localStorage or initialize as empty array
             let rents = JSON.parse(localStorage.getItem('rents')) || [];
@@ -43,7 +44,7 @@
             
             // Optionally display a message to the user
             alert('Rent ID has been reset to 5000.');
-        }
+        }*/
     </script>
     
 
@@ -71,7 +72,7 @@
         </div>
 
         <!-- Rent Form Section -->
-        <h2 id="checkoutsection">Rent Form</h2><br>
+        <h2 id="checkoutsection">Booking Form</h2><br>
         <div class="box">
             <form action="https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec" method="post">
                 <!-- Hidden field for rentId -->
@@ -104,7 +105,7 @@
                 <label for="urusan">Business</label>
                 <input type="text" id="urusan" name="urusan" pattern="[A-Z\sa-z]{3,50}" required>
 
-                <button type="submit" onclick="getRentId()">Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
