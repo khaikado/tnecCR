@@ -26,25 +26,70 @@
   </div>
 
   <!-- Rent Form Section -->
-  <div class="fullscreen">
-    <h2 id="checkoutsection">Booking Form</h2><br>
-    <div class="box">
-      <form action="https://script.google.com/macros/s/AKfycbzCmUDx5P6zjPtxXML1vfHignCCpezV-NYv54vOjonWxlnaMEgud2f_n5FHkwhGyd4C/exec" method="post">
-        <!--label for="rentid">Rent ID</label>
-        <input type="text" id="rentid" name="rentId" placeholder="2" required><br-->
-        <label for="checkin-date">Check-in Date</label>
-        <input type="date" id="checkin-date" name="checkinDate" required>
-        <label for="name">Time</label>
-        <input type="time" id="timein" name="time_in" required><br>
-        <label for="odormeter">Odormeter Out</label>
-        <input type="number" id="odormeter" name="odormeterOut" placeholder="100000" required>
-        <label for="name">Odormeter In</label>
-        <input type="number" id="odormeter" name="odormeterIn" placeholder="100000" required><br>
+<div class="fullscreen">
+  <h2 id="checkoutsection">Booking Form</h2><br>
+  <div class="box">
+    <form id="rentForm">
+      <label for="rentid">Rent ID</label>
+      <input type="text" id="rentid" name="rentId" placeholder="2" required><br>
+      
+      <label for="checkin-date">Check-in Date</label>
+      <input type="date" id="checkin-date" name="checkinDate" required><br>
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      <label for="timein">Time</label>
+      <input type="time" id="timein" name="time_in" required><br>
+
+      <label for="odormeterOut">Odormeter Out</label>
+      <input type="number" id="odormeterOut" name="odormeterOut" placeholder="100000" required><br>
+
+      <label for="odormeterIn">Odormeter In</label>
+      <input type="number" id="odormeterIn" name="odormeterIn" placeholder="100000" required><br>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
+</div>
+
+<script>
+  document.getElementById('rentForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Gather the form data
+    const rentId = document.getElementById('rentid').value;
+    const checkinDate = document.getElementById('checkin-date').value;
+    const timeIn = document.getElementById('timein').value;
+    const odormeterOut = document.getElementById('odormeterOut').value;
+    const odormeterIn = document.getElementById('odormeterIn').value;
+
+    // Create the request body
+    const requestBody = {
+      rentId: rentId,
+      checkinDate: checkinDate,
+      time_in: timeIn,
+      odormeterOut: odormeterOut,
+      odormeterIn: odormeterIn,
+      action: 'checkin' // or 'checkout', depending on the action you want to take
+    };
+
+    // Send the POST request using fetch
+    fetch('https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec', {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.text())  // Parse the response as text
+    .then(result => {
+      console.log(result);  // Handle the response from the server
+      alert(result);  // Display the response (optional)
+    })
+    .catch(error => {
+      console.error('Error:', error);  // Handle any errors
+      alert('There was an error processing your request.');
+    });
+  });
+</script>
 
   <!-- Footer -->
   <footer>
