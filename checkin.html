@@ -29,7 +29,8 @@
 <div class="fullscreen">
   <h2 id="checkoutsection">Booking Form</h2><br>
   <div class="box">
-    <form id="rentForm">
+    <form id="rentForm" action="https://script.google.com/macros/s/AKfycbytj1KcpJIUBpPIv02ubN9o7jFjVkDMAkK51bOSGJF_st6HRUBe1nDkqA3JYXvX9PBNjg/exec" method="post">
+      <input type="hidden" name="formType" value="checkin">
       <label for="rentid">Rent ID</label>
       <input type="text" id="rentid" name="rentId" placeholder="2" required><br>
       
@@ -50,46 +51,48 @@
   </div>
 </div>
 
-<script>
-  document.getElementById('rentForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
+<!--
+  <script>
+    document.getElementById('rentForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent default form submission
 
-    // Gather the form data
-    const rentId = document.getElementById('rentid').value;
-    const checkinDate = document.getElementById('checkin-date').value;
-    const timeIn = document.getElementById('timein').value;
-    const odormeterOut = document.getElementById('odormeterOut').value;
-    const odormeterIn = document.getElementById('odormeterIn').value;
+      // Gather the form data
+      const rentId = document.getElementById('rentid').value;
+      const checkinDate = document.getElementById('checkin-date').value;
+      const timeIn = document.getElementById('timein').value;
+      const odormeterOut = document.getElementById('odormeterOut').value;
+      const odormeterIn = document.getElementById('odormeterIn').value;
 
-    // Create the request body
-    const requestBody = {
-      rentId: rentId,
-      checkinDate: checkinDate,
-      time_in: timeIn,
-      odormeterOut: odormeterOut,
-      odormeterIn: odormeterIn,
-      action: 'checkin' // or 'checkout', depending on the action you want to take
-    };
+      // Create the request body
+      const requestBody = {
+        rentId: rentId,
+        checkinDate: checkinDate,
+        time_in: timeIn,
+        odormeterOut: odormeterOut,
+        odormeterIn: odormeterIn,
+        action: 'checkin' // or 'checkout', depending on the action you want to take
+      };
 
-    // Send the POST request using fetch
-    fetch('https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec', {
-      method: 'POST',
-      body: JSON.stringify(requestBody),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.text())  // Parse the response as text
-    .then(result => {
-      console.log(result);  // Handle the response from the server
-      alert(result);  // Display the response (optional)
-    })
-    .catch(error => {
-      console.error('Error:', error);  // Handle any errors
-      alert('There was an error processing your request.');
+      // Send the POST request using fetch
+      fetch('https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec', {
+        method: 'POST',
+        body: JSON.stringify(requestBody),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.text())  // Parse the response as text
+      .then(result => {
+        console.log(result);  // Handle the response from the server
+        alert(result);  // Display the response (optional)
+      })
+      .catch(error => {
+        console.error('Error:', error);  // Handle any errors
+        alert('There was an error processing your request.');
+      });
     });
-  });
-</script>
+  </script>
+-->
 
   <!-- Footer -->
   <footer>
