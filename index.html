@@ -8,46 +8,6 @@
 </head>
 <body>
 
-    <script>
-        // Function to get and auto-increment rentID
-        /*
-        function getRentId() {
-            // Retrieve the current list of rents from localStorage or initialize as empty array
-            let rents = JSON.parse(localStorage.getItem('rents')) || [];
-            
-            // Auto-increment RentID based on the last RentID used
-            let newRentId = rents.length > 0 ? rents[rents.length - 1].rentId + 1 : 5000;
-            
-            // Debugging: Log the new RentID to the console
-            console.log('New RentID:', newRentId);
-            
-            // Set the new RentID in the hidden input field
-            document.getElementById('rentId').value = newRentId;
-            
-            // Create a new rent object (for demonstration purposes, we're just storing rentId here)
-            const newRent = { rentId: newRentId };
-            
-            // Add the new rent to the rents array
-            rents.push(newRent);
-            
-            // Save the updated rents array back to localStorage
-            localStorage.setItem('rents', JSON.stringify(rents));
-            
-            // Optionally display a message to the user
-            alert(Your Rent ID is ${newRentId}, please take note!);
-        }
-
-        // Function to reset rentId by clearing localStorage
-        function resetRentId() {
-            // Clear 'rents' from localStorage
-            localStorage.removeItem('rents');
-            
-            // Optionally display a message to the user
-            alert('Rent ID has been reset to 5000.');
-        }*/
-    </script>
-    
-
     <!-- Floating Header Section -->
     <div id="header-wrapper">
         <div id="header" class="container">
@@ -67,8 +27,25 @@
     <!-- Content Above the Form -->
     <div class="fullscreen">
         <div class="content">
-            <h2>Welcome to TNEC Car Booking</h2>
+            <h2>Welcome to TNEC Car Booking</h2><br>
+            <p>At <b>TNEC (TNB Engineering Corporation Sdn. Bhd.)</b>, we offer a hassle-free car reservation service designed to meet the transportation needs of our corporate clients. Whether you need vehicles for site visits, business trips, or daily operations. Our easy-to-use online platform allows you to choose from a wide selection of well-maintained vehicles and select your preferred rental duration.</p>
             <p>Please fill out the form below to rent a vehicle. Ensure all fields are completed accurately.</p>
+
+            <div class="car-container">
+                <div class="car-card">
+                    <img src="proton-persona.png" alt="Proton Persona">
+                    <h3>Proton Persona</h3>
+                    <p>Sedan • 5 Seater</p>
+                    <button class="select-button">Available</button>
+                </div>
+        
+                <div class="car-card">
+                    <img src="honda-accord.png" alt="Honda Accord">
+                    <h3>Honda Accord</h3>
+                    <p>Sedan • 5 Seater</p>
+                    <button class="select-button">Available</button>
+                </div>
+            </div>
         </div>
 
         <!-- Rent Form Section -->
@@ -76,8 +53,6 @@
         <div class="box">
             <form action="https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec" method="post">
                 <input type="hidden" name="formType" value="checkout">
-                <!-- Hidden field for rentId -->
-                <!-- input type="hidden" id="rentId" name="rentId" value="" /-->
 
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>
@@ -91,8 +66,23 @@
                 </select>
                 
                 <label for="cars">Select Car</label>
-                <input class="circle" type="radio" name="car" id="wra138" value="WRA 138" required> WRA 138(Honda Civic)
-                <input class="circle" type="radio" name="car" id="wb4052v" value="WB 4052 V" required> WB 4052 V(Persona)
+                <ul>
+                    <li>
+                        <input type="radio" name="car" id="wra138" value="WRA 138" required />
+                        <label for="wra138">
+                            <img src="accord.png" alt="WRA 138 (Honda Accord)" /><br>
+                            WRA 138 (Honda Accord)
+                        </label>
+                    </li>
+                    
+                    <li>
+                        <input type="radio" name="car" id="wb4052v" value="WB 4052 V" required />
+                        <label for="wb4052v">
+                            <img src="persona.png" alt="WB 4052 V (Persona)" /><br>
+                            WB 4052 V (Persona)
+                        </label>
+                    </li>
+                </ul>
 
                 <label for="checkout-date">Check-out Date</label>
                 <input type="date" id="checkout-date" name="checkoutDate" required>
@@ -110,11 +100,6 @@
             </form>
         </div>
     </div>
-
-    <!-- Reset Button Section -->
-    <!--div>
-        <button onclick="resetRentId()">Reset Rent ID</button>
-    </div-->
 
     <!-- Footer -->
     <footer>
