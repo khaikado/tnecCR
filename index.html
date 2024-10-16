@@ -66,23 +66,22 @@
                 </select>
                 
                 <label for="cars">Select Car</label>
-                <ul>
-                    <li>
-                        <input type="radio" name="car" id="wra138" value="WRA 138" required />
-                        <label for="wra138">
-                            <img src="accord.png" alt="WRA 138 (Honda Accord)" /><br>
-                            WRA 138 (Honda Accord)
+                <div class="car-selection">
+                    <div class="car-option">
+                        <input type="radio" id="wra138" name="car" value="WRA 138">
+                        <label for="cb1">
+                            <img src="accord.png" alt="Honda Accord">
+                            <span>WRA 138 (Honda Accord)</span>
                         </label>
-                    </li>
-                    
-                    <li>
-                        <input type="radio" name="car" id="wb4052v" value="WB 4052 V" required />
-                        <label for="wb4052v">
-                            <img src="persona.png" alt="WB 4052 V (Persona)" /><br>
-                            WB 4052 V (Persona)
+                    </div>
+                    <div class="car-option">
+                        <input type="radio" id="wb4052v" name="car" value="WB 4052 V">
+                        <label for="cb2">
+                            <img src="persona.png" alt="Persona">
+                            <span>WB 4052 V (Persona)</span>
                         </label>
-                    </li>
-                </ul>
+                    </div>
+                </div>
 
                 <label for="checkout-date">Check-out Date</label>
                 <input type="date" id="checkout-date" name="checkoutDate" required>
