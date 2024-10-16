@@ -204,7 +204,7 @@ input, select {
 
 button {
 	padding: 10px 20px;
-	background-color: #4CAF50;
+	background-color: #17a589;
 	color: white;
 	border: none;
 	border-radius: 4px;
@@ -212,29 +212,63 @@ button {
 }
 
 button:hover {
-	background-color: #45a049;
+	background-color: #17a589;
 }
 
-/**   ALERT   **/
-.alert {
-	padding: 20px;
-	background-color: #f44336;
-	color: white;
+/* Style for car selection options */
+.car-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Add spacing between car options */
 }
-  
-.closebtn {
-	margin-left: 15px;
-	color: white;
-	font-weight: bold;
-	float: right;
-	font-size: 22px;
-	line-height: 20px;
-	cursor: pointer;
-	transition: 0.3s;
+
+.car-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.4s, transform 0.3s;
+	z-index: 1;
 }
-  
-.closebtn:hover {
-	color: black;
+
+.car-button img {
+    width: 120px; /* Adjust the size of the image */
+    height: auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.car-button span {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #002960;
+}
+
+/* Hide the radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Checked state for the selected car */
+input[type="radio"]:checked + label {
+    border-color: #4CAF50; /* Green border for selected car */
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5); /* Add a subtle shadow */
+}
+
+input[type="radio"]:checked + label img {
+    transform: scale(1.05); /* Slightly enlarge the image when selected */
+    box-shadow: 0 0 10px #4CAF50; /* Add green shadow */
+	
+}
+
+/* Hover effect */
+.car-button:hover {
+    border-color: #0066cc; /* Blue border on hover */
+}
+
+.car-button:hover img {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
 }
 
 /*********************************************************************************/
