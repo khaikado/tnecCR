@@ -166,6 +166,10 @@ label img {
 	transform-origin: 50% 50%;
 }
 
+input[type="radio"][id^="cb"] {
+	display: none;
+}
+
 input, select {
 	width: 95%;
 	padding: 10px;
@@ -174,83 +178,21 @@ input, select {
 	border-radius: 4px;
 }
 
-.car-selection {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between car options */
+:checked + label {
+	border-color: #ddd;
 }
-
-.car-option {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Space between the radio button and the car image/text */
-    padding: 10px;
-    border: 1px solid #fff;
-    cursor: pointer;
-    position: relative;
-    transition: border-color 0.4s;
+  
+:checked + label:before {
+	content: "✓";
+	background-color: grey;
+	transform: scale(1);
 }
-
-.car-option img {
-    width: 100px;
-    height: auto;
-    transition: transform 0.2s, box-shadow 0.2s;
-    transform-origin: center;
+  
+:checked + label img {
+	transform: scale(0.9);
+	box-shadow: 0 0 5px #333;
+	z-index: -1;
 }
-
-.car-option span {
-    font-weight: bold;
-}
-
-.car-option input[type="radio"] {
-    display: none; /* Hide the radio input */
-}
-
-.car-option label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    gap: 15px;
-}
-
-.car-option label:before {
-    background-color: white;
-    content: " ";
-    display: block;
-    border-radius: 50%;
-    border: 2px solid grey; /* Thicker border for visibility */
-    position: relative;
-    width: 30px; /* Increased size */
-    height: 30px;
-    transition: transform 0.4s, border-color 0.2s, background-color 0.2s;
-    margin-right: 15px;
-    flex-shrink: 0;
-}
-
-.car-option input[type="radio"]:checked + label:before {
-    content: "✓";
-    background-color: green; /* Changed background color to green */
-    color: white;
-    border-color: green; /* Change border color to match */
-    font-size: 18px; /* Increase checkmark size */
-    transform: scale(1);
-}
-
-.car-option input[type="radio"]:checked + label img {
-    transform: scale(0.9); /* Scale down the image */
-    box-shadow: 0 0 10px #333; /* Enhance the shadow for clarity */
-}
-
-.car-option input[type="radio"]:checked + label {
-    border-color: #ddd;
-}
-
-.car-option label:hover:before {
-    border-color: green; /* Border color change on hover */
-    cursor: pointer;
-}
-
 
 .square {
 	width: 98%;
