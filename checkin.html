@@ -29,7 +29,7 @@
 <div class="fullscreen">
   <h2 id="checkoutsection">Booking Form</h2><br>
   <div class="box">
-    <form id="rentForm" action="https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec" method="post">
+    <form id="rentForm" onsubmit="submitForm()" action="https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec" method="post" name="checkinForm">
       <input type="hidden" name="formType" value="checkin">
       <label for="rentid">Rent ID</label>
       <input type="text" id="rentid" name="rentId" placeholder="2" required><br>
@@ -46,53 +46,16 @@
       <label for="odormeterIn">Odormeter In</label>
       <input type="number" id="odormeterIn" name="odormeterIn" placeholder="100000" required><br>
 
-      <button type="submit">Submit</button>
+      <button type="submit" id="submit" value="submit">Submit</button>
     </form>
   </div>
 </div>
 
-<!--
-  <script>
-    document.getElementById('rentForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent default form submission
-
-      // Gather the form data
-      const rentId = document.getElementById('rentid').value;
-      const checkinDate = document.getElementById('checkin-date').value;
-      const timeIn = document.getElementById('timein').value;
-      const odormeterOut = document.getElementById('odormeterOut').value;
-      const odormeterIn = document.getElementById('odormeterIn').value;
-
-      // Create the request body
-      const requestBody = {
-        rentId: rentId,
-        checkinDate: checkinDate,
-        time_in: timeIn,
-        odormeterOut: odormeterOut,
-        odormeterIn: odormeterIn,
-        action: 'checkin' // or 'checkout', depending on the action you want to take
-      };
-
-      // Send the POST request using fetch
-      fetch('https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec', {
-        method: 'POST',
-        body: JSON.stringify(requestBody),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.text())  // Parse the response as text
-      .then(result => {
-        console.log(result);  // Handle the response from the server
-        alert(result);  // Display the response (optional)
-      })
-      .catch(error => {
-        console.error('Error:', error);  // Handle any errors
-        alert('There was an error processing your request.');
-      });
-    });
-  </script>
--->
+<script>
+  function submitForm(){
+      if(!alert('Data have been successfully saved')){window.location.reload();}
+  }
+</script>
 
   <!-- Footer -->
   <footer>

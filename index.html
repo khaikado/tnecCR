@@ -51,7 +51,7 @@
         <!-- Rent Form Section -->
         <h2 id="checkoutsection">Booking Form</h2><br>
         <div class="box">
-            <form action="https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec" method="post">
+            <form onsubmit="submitForm()" action="https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec" method="post">
                 <input type="hidden" name="formType" value="checkout">
             
                 <label for="name">Name</label>
@@ -99,6 +99,12 @@
             </form>            
         </div>
     </div>
+
+    <script>
+        function submitForm(){
+            if(!alert('Data have been successfully saved')){window.location.reload();}
+        }
+    </script>
 
     <!-- Footer -->
     <footer>
