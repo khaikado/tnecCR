@@ -51,7 +51,7 @@
         <!-- Rent Form Section -->
         <h2 id="checkoutsection">Booking Form</h2><br>
         <div class="box">
-            <form onsubmit="submitForm()" action="https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec" method="post">
+            <form id="rentForm" onsubmit="submitForm()" action="https://script.google.com/macros/s/AKfycbyK59TYhIJD5HOQ-zojoQ5gxdbsDEZTSkgKB04sflffkewYgivKSBIL7PtaysqTNw7x/exec" method="post">
                 <input type="hidden" name="formType" value="checkout">
             
                 <label for="name">Name</label>
@@ -101,10 +101,34 @@
     </div>
 
     <script>
-        function submitForm(){
-            if(!alert('Data have been successfully saved')){window.location.reload();}
+        function submitForm() {
+          const form = document.getElementById('rentForm');
+          form.onsubmit = async function (e) {
+            e.preventDefault();  // Prevent the default form submission
+            const formData = new FormData(form);  // Create form data
+      
+            try {
+              const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData
+              });
+              const result = await response.text();  // Get the response as text
+              if (result === 'success') {
+                alert('Data has been successfully saved');
+                window.location.href = 'index.html';  // Redirect to index.html page
+              } else {
+                alert('An error occurred: ' + result);
+              }
+            } catch (error) {
+              console.error('Error!', error.message);
+            }
+          };
         }
-    </script>
+      
+        window.onload = submitForm;  // Ensure the function is attached when the page loads
+      </script>
+      
+
 
     <!-- Footer -->
     <footer>
