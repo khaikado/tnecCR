@@ -9,7 +9,7 @@ html, body {
 	color: #6c6c6c;
 }
 
-@media only screen and (max-width:100%){
+@media only screen and (max-width:600px){
 	/*for mobile*/
 	html, body, #header-wrapper, .fullscreen, .box, .container, #header, #menu, #menu ul, #menu li {
 		width: 100%;
