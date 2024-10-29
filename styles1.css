@@ -9,7 +9,7 @@ html, body {
 	color: #6c6c6c;
 }
 
-@media only screen and (max-width:530px){
+@media only screen and (max-width:550px){
 	/*for mobile*/
 	#header-wrapper, .fullscreen, .box, .container, #header, input, select{
 		width: 100%;
