@@ -11,12 +11,8 @@ html, body {
 }
 
 @media only screen and (max-width:500px){
-	#header-wrapper, .fullscreen, .container, .form-container, div.c {
+	#header-wrapper, .fullscreen, .container, .form-container, div.c, .box{
 		width: 100%;
-	}
-
-	.box{
-		width: 80%;
 	}
 
 	input, select {
