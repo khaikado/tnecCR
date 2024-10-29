@@ -9,6 +9,13 @@ html, body {
 	color: #6c6c6c;
 }
 
+@media only screen and (max-width:500px){
+	/*for mobile*/
+	#header-wrapper, .fullscreen {
+		width: 50%;
+	}
+}
+
 h1, h2, h3 {
 	margin: 0;
 	padding: 0;
