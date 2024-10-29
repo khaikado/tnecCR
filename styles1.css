@@ -1,3 +1,4 @@
+/* General styles */
 html, body {
 	height: 100%;
 	margin: 0;
@@ -10,9 +11,8 @@ html, body {
 }
 
 @media only screen and (max-width:767px){
-	/*for mobile*/
 	#header-wrapper, .fullscreen, .box, .container, #header, input, select, #rentForm{
-		width: 100%;
+		width: 80%;
 	}
 }
 
@@ -41,13 +41,13 @@ p {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-start; /* Align items at the start */
+	justify-content: flex-start;
 }
 
 .content {
 	padding: 20px;
-	margin-bottom: 20px; /* Space between content and form */
-	text-align: center; /* Center the content */
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 /*********************************************************************************/
@@ -56,15 +56,15 @@ p {
 #header-wrapper {
 	padding: 1em 0em;
 	background: #FFF;
-	position: sticky; /* Make the header sticky */
-	top: 0; /* It will stick to the top */
+	position: sticky;
+	top: 0;
 	width: 100%;
-	z-index: 1000; /* Ensure it stays on top of other elements */
+	z-index: 1000;
 }
 
 .container {
 	margin: 0 auto;
-	width: 1200px;
+	width: 100%;
 }
 
 #header {
@@ -75,15 +75,13 @@ p {
 	align-items: center;
 }
 
-/**   LOGO   **/
 #logo {
-	position: relative; /* Changed from absolute to relative */
-	margin-left: 1em; /* Add some left margin */
+	position: relative;
+	margin-left: 1em;
 }
 
-/**   MENU   **/
 #menu {
-	position: relative; /* Changed from absolute to relative */
+	position: relative;
 }
 
 #menu ul {
@@ -122,20 +120,26 @@ p {
 }
 
 /*********************************************************************************/
-/* Form                                                                          */
+/* Form Section                                                                  */
 /*********************************************************************************/
+.form-container {
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+}
+
 .box {
-	width: 600px; 
+	width: 600px;
 	background-color: #FFF;
-	margin: 0 auto; /* Center the box */
+	margin: 0;
 	border-radius: 0px;
 	display: flex;
 	flex-direction: column;
-	align-items: stretch; /* Align items to stretch */
+	align-items: stretch;
 	justify-content: center;
 	color: #002960;
-	padding: 20px; /* Add padding inside the box */
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -147,7 +151,7 @@ label {
 	position: relative;
 	cursor: pointer;
 }
-  
+
 label:before {
 	background-color: white;
 	color: white;
@@ -188,13 +192,13 @@ input, select {
 :checked + label {
 	border-color: #ddd;
 }
-  
+
 :checked + label:before {
 	content: "✓";
 	background-color: grey;
 	transform: scale(1);
 }
-  
+
 :checked + label img {
 	transform: scale(0.9);
 	box-shadow: 0 0 5px #333;
@@ -222,66 +226,74 @@ button:hover {
 	background-color: #17a589;
 }
 
-/* Style for car selection options */
+/* Car Selection Styles */
 .car-options {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Add spacing between car options */
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .car-button {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: border-color 0.4s, transform 0.3s;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 10px;
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: border-color 0.4s, transform 0.3s;
 	z-index: 1;
 }
 
 .car-button img {
-    width: 120px; /* Adjust the size of the image */
-    height: auto;
-    transition: transform 0.2s, box-shadow 0.2s;
+	width: 120px;
+	height: auto;
+	transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .car-button span {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #002960;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: #002960;
 }
 
-/* Hide the radio buttons */
 input[type="radio"] {
-    display: none;
+	display: none;
 }
 
-/* Checked state for the selected car */
 input[type="radio"]:checked + label {
-    border-color: #4CAF50; /* Green border for selected car */
-    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5); /* Add a subtle shadow */
+	border-color: #4CAF50;
+	box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
 }
 
 input[type="radio"]:checked + label img {
-    transform: scale(1.05); /* Slightly enlarge the image when selected */
-    box-shadow: 0 0 10px #4CAF50; /* Add green shadow */
-	
+	transform: scale(1.05);
+	box-shadow: 0 0 10px #4CAF50;
 }
 
-/* Hover effect */
 .car-button:hover {
-    border-color: #0066cc; /* Blue border on hover */
+	border-color: #0066cc;
 }
 
 .car-button:hover img {
-    transform: scale(1.05); /* Slightly enlarge the image on hover */
+	transform: scale(1.05);
+}
+
+/*********************************************************************************/
+/* RentID List                                                                   */
+/*********************************************************************************/
+div.c {
+	width: 200px;
+	height: 120px;
+	border: 3px solid green;
+	padding: 10px;
+	font-size: 12px;
+	color: #333;
+	text-align: center;
 }
 
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
-
 footer {
 	background-color: #003366;
 	color: white;
@@ -300,15 +312,15 @@ footer p {
 }
 
 /*********************************************************************************/
-/* Car                                                                           */
+/* Car Section                                                                   */
 /*********************************************************************************/
-
 .car-container {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	margin: 20px;
 }
+
 .car-card {
 	background-color: white;
 	border-radius: 10px;
@@ -319,21 +331,26 @@ footer p {
 	padding: 15px;
 	transition: transform 0.3s;
 }
+
 .car-card img {
 	max-width: 100%;
 	height: auto;
 }
+
 .car-card:hover {
 	transform: scale(1.05);
 }
+
 .car-card h3 {
 	margin: 10px 0;
 	font-size: 1.2em;
 }
+
 .car-card p {
 	color: #555;
 	font-size: 0.9em;
 }
+
 .select-button {
 	display: inline-block;
 	padding: 10px 20px;
@@ -345,6 +362,7 @@ footer p {
 	text-transform: uppercase;
 	font-size: 1em;
 }
+
 .select-button:hover {
 	background-color: #17a589;
 }
