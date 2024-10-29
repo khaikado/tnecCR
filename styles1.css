@@ -11,7 +11,7 @@ html, body {
 }
 
 @media only screen and (max-width:500px){
-	#header-wrapper, .fullscreen, .container, .form-container, div.c, .box{
+	#header-wrapper, .fullscreen, .container, .form-container, div.c, .box, label{
 		width: 100%;
 	}
 
