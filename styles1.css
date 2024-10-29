@@ -11,7 +11,7 @@ html, body {
 
 @media only screen and (max-width:550px){
 	/*for mobile*/
-	#header-wrapper, .fullscreen, .box, .container, #header, input, select, .rentForm{
+	#header-wrapper, .fullscreen, .box, .container, #header, input, select, #rentForm{
 		width: 100%;
 	}
 }
