@@ -9,7 +9,7 @@ html, body {
 	color: #6c6c6c;
 }
 
-@media only screen and (max-width:550px){
+@media only screen and (max-width:767px){
 	/*for mobile*/
 	#header-wrapper, .fullscreen, .box, .container, #header, input, select, #rentForm{
 		width: 100%;
