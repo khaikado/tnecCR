@@ -10,8 +10,8 @@ html, body {
 	color: #6c6c6c;
 }
 
-@media only screen and (max-width:767px){
-	#header-wrapper, .fullscreen, .box, .container, #header{
+@media only screen and (max-width:500px){
+	#header-wrapper, .fullscreen, .box, .container {
 		width: 100%;
 	}
 }
