@@ -55,8 +55,11 @@
                 <form id="rentForm" onsubmit="submitForm()" action="https://script.google.com/macros/s/AKfycbznK3aqWD2DQwHeQu3SRu7065UqgOH2IgYCBalO1UePGBCGZGL3hEyH4Jo50PBnG_dl/exec" method="post">
                     <input type="hidden" name="formType" value="checkout">
                 
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required>
+                    <!--label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}" required-->
+
+                    <label for="email">Email</label>
+                    <input type="text" id="name" name="name" placeholder="enter you email without @tnb.com.my" required>
                 
                     <label for="room-selection">Department</label>
                     <select class="square" id="room-selection" name="Department" required>
@@ -103,6 +106,14 @@
     </div>
 
     <script>
+        document.getElementById("rentForm").onsubmit = function(event) {
+            const usernameInput = document.getElementById("name");
+            if (usernameInput.value && !usernameInput.value.includes("@tnb.com.my")) {
+            // Append the domain if not already present
+            usernameInput.value = usernameInput.value + "@tnb.com.my";
+            }
+        };
+
         function submitForm() {
           const form = document.getElementById('rentForm');
           form.onsubmit = async function (e) {
