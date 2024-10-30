@@ -15,8 +15,8 @@ html, body {
 		width: 100%;
 	}
 
-	input, select {
-		width: 65%;
+	#rentForm {
+		width: 75%;
 	}
 }
 
